@@ -26,6 +26,7 @@
 #include "SimpleAudioEngine.h"
 
 USING_NS_CC;
+using namespace spine;
 
 Scene* HelloWorld::createScene()
 {
@@ -80,42 +81,65 @@ bool HelloWorld::init()
     menu->setPosition(Vec2::ZERO);
     this->addChild(menu, 1);
 
-    /////////////////////////////
-    // 3. add your codes below...
+    skeletonNode = SkeletonAnimation::createWithJsonFile("spineboy-pro.json", "spineboy.atlas", 0.6f);
+    skeletonNode->setPosition(Vec2(_contentSize.width / 2, 20));
+    addChild(skeletonNode);
 
-    // add a label shows "Hello World"
-    // create and initialize a label
+    // Queue the "walk" animation on the first track.
+    skeletonNode->setAnimation(0, "walk", true);
 
-    auto label = Label::createWithTTF("Hello World", "fonts/Marker Felt.ttf", 24);
-    if (label == nullptr)
-    {
-        problemLoading("'fonts/Marker Felt.ttf'");
-    }
-    else
-    {
-        // position the label on the center of the screen
-        label->setPosition(Vec2(origin.x + visibleSize.width/2,
-                                origin.y + visibleSize.height - label->getContentSize().height));
+    // Queue the "aim" animation on a higher track.
+    // It consists of a single frame that positions
+    // the back arm and gun such that they point at
+    // the "crosshair" bone. By setting this
+    // animation on a higher track, it overrides
+    // any changes to the back arm and gun made
+    // by the walk animation, allowing us to
+    // mix the two. The mouse position following
+    // is performed in the lambda below.
+    skeletonNode->setAnimation(1, "aim", true);
 
-        // add the label as a child to this layer
-        this->addChild(label, 1);
-    }
+    // Next we setup a listener that receives and stores
+    // the current mouse location. The location is converted
+    // to the skeleton's coordinate system.
+    EventListenerMouse* mouseListener = EventListenerMouse::create();
+    mouseListener->onMouseMove = [this](cocos2d::Event* event) -> void {
+        // convert the mosue location to the skeleton's coordinate space
+        // and store it.
+        EventMouse* mouseEvent = dynamic_cast<EventMouse*>(event);
+        position = skeletonNode->convertToNodeSpace(mouseEvent->getLocationInView());
+    };
+    _eventDispatcher->addEventListenerWithSceneGraphPriority(mouseListener, this);
 
-    // add "HelloWorld" splash screen"
-    auto sprite = Sprite::create("HelloWorld.png");
-    if (sprite == nullptr)
-    {
-        problemLoading("'HelloWorld.png'");
-    }
-    else
-    {
-        // position the sprite on the center of the screen
-        sprite->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
+    // Position the "crosshair" bone at the mouse
+    // location.
+    //
+    // When setting the crosshair bone position
+    // to the mouse position, we need to translate
+    // from "skeleton space" to "local bone space".
+    // Note that the local bone space is calculated
+    // using the bone's parent worldToLocal() function!
+    //
+    // After updating the bone position based on the
+    // converted mouse location, we call updateWorldTransforms()
+    // again so the change of the IK target position is
+    // applied to the rest of the skeleton.
+    skeletonNode->setPostUpdateWorldTransformsListener([this](SkeletonAnimation* node) -> void {
+        Bone* crosshair = node->findBone("crosshair"); // The bone should be cached
+        float localX = 0, localY = 0;
+        crosshair->getParent()->worldToLocal(position.x, position.y, localX, localY);
+        crosshair->setX(localX);
+        crosshair->setY(localY);
+        crosshair->setAppliedValid(false);
 
-        // add the sprite as a child to this layer
-        this->addChild(sprite, 0);
-    }
+        node->getSkeleton()->updateWorldTransform();
+    });
+ 
     return true;
+}
+
+void HelloWorld::update(float deltaTime)
+{
 }
 
 

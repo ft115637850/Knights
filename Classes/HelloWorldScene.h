@@ -26,6 +26,7 @@
 #define __HELLOWORLD_SCENE_H__
 
 #include "cocos2d.h"
+#include <spine/spine-cocos2dx.h>
 
 class HelloWorld : public cocos2d::Scene
 {
@@ -33,12 +34,18 @@ public:
     static cocos2d::Scene* createScene();
 
     virtual bool init();
+
+    virtual void update(float deltaTime);
     
     // a selector callback
     void menuCloseCallback(cocos2d::Ref* pSender);
     
     // implement the "static create()" method manually
     CREATE_FUNC(HelloWorld);
+
+private:
+    spine::SkeletonAnimation* skeletonNode;
+    cocos2d::Vec2 position;
 };
 
 #endif // __HELLOWORLD_SCENE_H__
