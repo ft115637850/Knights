@@ -81,59 +81,13 @@ bool HelloWorld::init()
     menu->setPosition(Vec2::ZERO);
     this->addChild(menu, 1);
 
-    skeletonNode = SkeletonAnimation::createWithJsonFile("spineboy-pro.json", "spineboy.atlas", 0.6f);
-    skeletonNode->setPosition(Vec2(_contentSize.width / 2, 20));
+    skeletonNode = SkeletonAnimation::createWithJsonFile("skeleton.json", "skeleton.atlas", 0.6f);
+    skeletonNode->setPosition(Vec2(_contentSize.width / 2, 100));
     addChild(skeletonNode);
 
     // Queue the "walk" animation on the first track.
-    skeletonNode->setAnimation(0, "walk", true);
+    skeletonNode->setAnimation(0, "attack", true);
 
-    // Queue the "aim" animation on a higher track.
-    // It consists of a single frame that positions
-    // the back arm and gun such that they point at
-    // the "crosshair" bone. By setting this
-    // animation on a higher track, it overrides
-    // any changes to the back arm and gun made
-    // by the walk animation, allowing us to
-    // mix the two. The mouse position following
-    // is performed in the lambda below.
-    skeletonNode->setAnimation(1, "aim", true);
-
-    // Next we setup a listener that receives and stores
-    // the current mouse location. The location is converted
-    // to the skeleton's coordinate system.
-    EventListenerMouse* mouseListener = EventListenerMouse::create();
-    mouseListener->onMouseMove = [this](cocos2d::Event* event) -> void {
-        // convert the mosue location to the skeleton's coordinate space
-        // and store it.
-        EventMouse* mouseEvent = dynamic_cast<EventMouse*>(event);
-        position = skeletonNode->convertToNodeSpace(mouseEvent->getLocationInView());
-    };
-    _eventDispatcher->addEventListenerWithSceneGraphPriority(mouseListener, this);
-
-    // Position the "crosshair" bone at the mouse
-    // location.
-    //
-    // When setting the crosshair bone position
-    // to the mouse position, we need to translate
-    // from "skeleton space" to "local bone space".
-    // Note that the local bone space is calculated
-    // using the bone's parent worldToLocal() function!
-    //
-    // After updating the bone position based on the
-    // converted mouse location, we call updateWorldTransforms()
-    // again so the change of the IK target position is
-    // applied to the rest of the skeleton.
-    skeletonNode->setPostUpdateWorldTransformsListener([this](SkeletonAnimation* node) -> void {
-        Bone* crosshair = node->findBone("crosshair"); // The bone should be cached
-        float localX = 0, localY = 0;
-        crosshair->getParent()->worldToLocal(position.x, position.y, localX, localY);
-        crosshair->setX(localX);
-        crosshair->setY(localY);
-        crosshair->setAppliedValid(false);
-
-        node->getSkeleton()->updateWorldTransform();
-    });
  
     return true;
 }

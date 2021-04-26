@@ -1,0 +1,340 @@
+{
+"skeleton": {
+	"hash": "sd8O+K+Mu/E7VPW9gMf/OZt7OKk",
+	"spine": "3.8",
+	"x": -129.62,
+	"y": -155.49,
+	"width": 290.03,
+	"height": 455.88,
+	"images": "./Knights/Resources/Knights/",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" },
+	{ "name": "pelvis", "parent": "root", "length": 48, "rotation": -90, "y": -15 },
+	{ "name": "body", "parent": "pelvis", "length": 84.97, "rotation": -180, "x": -15 },
+	{ "name": "head", "parent": "body", "length": 134.49, "rotation": -0.63, "x": 132.21, "y": 10.1 },
+	{ "name": "rightshoulders", "parent": "body", "length": 45.33, "rotation": 180, "x": 95.9, "y": 78.97 },
+	{ "name": "rightarm", "parent": "rightshoulders", "length": 48.83, "x": 50.98, "y": 5.74 },
+	{ "name": "righthand", "parent": "rightarm", "length": 44.02, "x": 50.94, "y": 0.13 },
+	{ "name": "shoulders", "parent": "body", "length": 62.31, "rotation": -180, "x": 111.27, "y": -78.08 },
+	{ "name": "arm", "parent": "shoulders", "length": 49.49, "x": 64.28, "y": 1.98 },
+	{ "name": "hand", "parent": "arm", "length": 45.54, "x": 51.43, "y": -2.97 },
+	{ "name": "thigh", "parent": "pelvis", "length": 28.7, "x": 19.12, "y": 34.56 },
+	{ "name": "leg", "parent": "thigh", "length": 42.54, "rotation": 4.61, "x": 29.67, "y": 4.94 },
+	{ "name": "cape2", "parent": "body", "length": 89.29, "rotation": -140.39, "x": 58.31, "y": -25.8 },
+	{ "name": "rightthigh", "parent": "pelvis", "length": 20, "x": 18.01, "y": -18.08 },
+	{ "name": "rightleg", "parent": "rightthigh", "length": 29.67, "rotation": -2.29, "x": 34.39, "y": -5.93 },
+	{ "name": "sword", "parent": "hand", "length": 109.57, "rotation": -93.5, "x": 32.9, "y": -3.04 }
+],
+"slots": [
+	{ "name": "cape2", "bone": "cape2", "attachment": "cape2" },
+	{ "name": "rightthigh", "bone": "rightthigh", "attachment": "rightthigh" },
+	{ "name": "rightleg", "bone": "rightleg", "attachment": "rightleg" },
+	{ "name": "rightshoe", "bone": "rightleg", "attachment": "rightshoe" },
+	{ "name": "pelvis", "bone": "pelvis", "attachment": "pelvis" },
+	{ "name": "rightshoulders", "bone": "rightshoulders", "attachment": "rightshoulders" },
+	{ "name": "rightarm", "bone": "rightarm", "attachment": "rightarm" },
+	{ "name": "righthand", "bone": "righthand", "attachment": "righthand" },
+	{ "name": "body", "bone": "body", "attachment": "body" },
+	{ "name": "head", "bone": "head", "attachment": "head" },
+	{ "name": "thigh", "bone": "thigh", "attachment": "thigh" },
+	{ "name": "leg", "bone": "leg", "attachment": "leg" },
+	{ "name": "shoe", "bone": "leg", "attachment": "shoe" },
+	{ "name": "sword", "bone": "sword", "attachment": "sword" },
+	{ "name": "shoulders", "bone": "shoulders", "attachment": "shoulders" },
+	{ "name": "arm", "bone": "arm", "attachment": "arm" },
+	{ "name": "hand", "bone": "hand", "attachment": "hand" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"rightarm": {
+				"rightarm": { "x": 21.96, "y": -2.66, "rotation": 90, "width": 46, "height": 74 }
+			},
+			"rightshoe": {
+				"rightshoe": { "x": 39.11, "y": 1.56, "rotation": 92.29, "width": 26, "height": 27 }
+			},
+			"righthand": {
+				"righthand": { "x": 19.87, "y": -1.57, "rotation": 79.37, "width": 59, "height": 67 }
+			},
+			"leg": {
+				"leg": { "x": 18.79, "rotation": 90, "width": 37, "height": 59 }
+			},
+			"shoulders": {
+				"shoulders": { "x": 30.66, "rotation": 90, "width": 69, "height": 97 }
+			},
+			"thigh": {
+				"thigh": { "x": 10.88, "y": 1.98, "rotation": 90, "width": 46, "height": 45 }
+			},
+			"arm": {
+				"arm": { "x": 21.03, "y": 1.98, "rotation": 90, "width": 46, "height": 74 }
+			},
+			"head": {
+				"head": { "x": 68.13, "y": 5.08, "rotation": -179.37, "width": 200, "height": 168 }
+			},
+			"body": {
+				"body": { "x": 71.25, "y": 4.97, "rotation": -90, "width": 156, "height": 180 }
+			},
+			"pelvis": {
+				"pelvis": { "x": 23.25, "y": 2.76, "rotation": 90, "width": 94, "height": 73 }
+			},
+			"shoe": {
+				"shoe": { "x": 44.51, "rotation": 90, "width": 26, "height": 27 }
+			},
+			"hand": {
+				"hand": { "x": 21.76, "y": 1.98, "rotation": 106.62, "width": 59, "height": 67 }
+			},
+			"rightleg": {
+				"rightleg": { "x": 15.43, "y": 0.02, "rotation": 92.29, "width": 37, "height": 59 }
+			},
+			"rightshoulders": {
+				"rightshoulders": { "x": 18.73, "y": 11.32, "rotation": 81.43, "width": 69, "height": 97 }
+			},
+			"rightthigh": {
+				"rightthigh": { "x": 13.05, "y": -1.19, "rotation": 90, "width": 46, "height": 45 }
+			},
+			"sword": {
+				"sword": { "x": 82.59, "y": 7.61, "rotation": -142.04, "width": 190, "height": 150 }
+			},
+			"cape2": {
+				"cape2": { "x": 67.96, "y": -1.59, "rotation": 50.39, "width": 185, "height": 200 }
+			}
+		}
+	}
+],
+"animations": {
+	"attack": {
+		"bones": {
+			"sword": {
+				"rotate": [
+					{ "time": 0.1667, "angle": 28.66 },
+					{ "time": 0.3333, "angle": 44.09, "curve": "stepped" },
+					{ "time": 0.8333, "angle": 44.09 }
+				]
+			},
+			"arm": {
+				"rotate": [
+					{ "time": 0.1667, "angle": -35.34 },
+					{ "time": 0.5, "angle": -2.39 }
+				]
+			},
+			"hand": {
+				"rotate": [
+					{ "time": 0.1667, "angle": -1.56 },
+					{ "time": 0.5, "angle": 1.65 }
+				]
+			},
+			"shoulders": {
+				"rotate": [
+					{ "time": 0.1667, "angle": -46.1 },
+					{ "time": 0.5, "angle": 67.13 }
+				]
+			},
+			"body": {
+				"rotate": [
+					{ "time": 0.3333, "angle": 13.21 }
+				]
+			},
+			"thigh": {
+				"rotate": [
+					{ "time": 0.1667, "angle": 23.14, "curve": "stepped" },
+					{ "time": 0.6667, "angle": 23.14 }
+				]
+			},
+			"leg": {
+				"rotate": [
+					{ "time": 0.1667, "angle": 20.96, "curve": "stepped" },
+					{ "time": 0.5, "angle": 20.96, "curve": "stepped" },
+					{ "time": 0.6667, "angle": 20.96 }
+				]
+			},
+			"rightleg": {
+				"rotate": [
+					{ "time": 0.1667, "angle": 70.52, "curve": "stepped" },
+					{ "time": 0.6667, "angle": 70.52 }
+				]
+			},
+			"rightthigh": {
+				"rotate": [
+					{ "time": 0.1667, "angle": -33.62, "curve": "stepped" },
+					{ "time": 0.6667, "angle": -33.62 }
+				]
+			},
+			"righthand": {
+				"rotate": [
+					{ "time": 0.3333, "angle": -102.46 }
+				]
+			},
+			"rightarm": {
+				"rotate": [
+					{ "time": 0.3333, "angle": -6.57 }
+				]
+			},
+			"rightshoulders": {
+				"rotate": [
+					{ "time": 0.3333, "angle": 22.31 }
+				]
+			},
+			"head": {
+				"rotate": [
+					{ "time": 0.3333, "angle": -9.09 }
+				]
+			}
+		}
+	},
+	"walk": {
+		"bones": {
+			"righthand": {
+				"rotate": [
+					{ "angle": -13.96 },
+					{ "time": 0.1667, "angle": -40.33 },
+					{ "time": 0.3333, "angle": -52.87 },
+					{ "time": 0.5, "angle": 2.32 },
+					{ "time": 1, "angle": -89.15 },
+					{ "time": 1.1667, "angle": -27.14 },
+					{ "time": 1.3333, "angle": -13.96 }
+				],
+				"translate": [
+					{ "time": 0.3333, "x": -1, "y": -1.6 }
+				]
+			},
+			"rightshoulders": {
+				"rotate": [
+					{ "angle": -25.84 },
+					{ "time": 0.1667, "angle": -18.5 },
+					{ "time": 0.3333, "angle": 18.6 },
+					{ "time": 0.5, "angle": 33.41 },
+					{ "time": 1, "angle": 20.28 },
+					{ "time": 1.1667, "angle": 33.2 },
+					{ "time": 1.3333, "angle": -25.84 }
+				]
+			},
+			"rightarm": {
+				"rotate": [
+					{ "angle": -79.42 },
+					{ "time": 0.1667, "angle": -66.8 },
+					{ "time": 0.3333, "angle": -51.93 },
+					{ "time": 0.5, "angle": -13.32 },
+					{ "time": 1, "angle": 8.16 },
+					{ "time": 1.1667, "angle": -71.37 },
+					{ "time": 1.3333, "angle": -79.42 }
+				]
+			},
+			"body": {
+				"rotate": [
+					{ "angle": 8.36, "curve": "stepped" },
+					{ "time": 1.3333, "angle": 8.36 }
+				]
+			},
+			"shoulders": {
+				"rotate": [
+					{ "angle": 66.85 },
+					{ "time": 0.1667, "angle": 50.9 },
+					{ "time": 0.3333, "angle": 13.79 },
+					{ "time": 0.5, "angle": -53.95 },
+					{ "time": 1, "angle": -26.64 },
+					{ "time": 1.1667, "angle": 2.96 },
+					{ "time": 1.3333, "angle": 66.85 }
+				]
+			},
+			"hand": {
+				"rotate": [
+					{ "angle": -20.15 },
+					{ "time": 0.1667, "angle": -31.05 },
+					{ "time": 0.5, "angle": -26.8 },
+					{ "time": 1.3333, "angle": -20.15 }
+				]
+			},
+			"arm": {
+				"rotate": [
+					{ "angle": -68.92 },
+					{ "time": 0.5, "angle": -80.03 },
+					{ "time": 1.1667, "angle": -67.96 },
+					{ "time": 1.3333, "angle": -68.92 }
+				]
+			},
+			"sword": {
+				"rotate": [
+					{ "angle": -1.39 },
+					{ "time": 0.5, "angle": -10.19 },
+					{ "time": 1, "angle": -0.8 },
+					{ "time": 1.1667, "angle": -8.93 },
+					{ "time": 1.3333, "angle": -1.39 }
+				]
+			},
+			"thigh": {
+				"rotate": [
+					{ "angle": -50.46 },
+					{ "time": 0.1667, "angle": -45.59 },
+					{ "time": 0.3333, "angle": -2.43 },
+					{ "time": 0.5, "angle": 4.45 },
+					{ "time": 0.6667, "angle": 9.16 },
+					{ "time": 1, "angle": -16.93 },
+					{ "time": 1.3333, "angle": -50.46 }
+				]
+			},
+			"leg": {
+				"rotate": [
+					{ "angle": 2.68 },
+					{ "time": 0.1667, "angle": 27.8 },
+					{ "time": 0.3333, "angle": 8.43 },
+					{ "time": 0.5, "angle": 13.1 },
+					{ "time": 0.6667, "angle": 51.75 },
+					{ "time": 0.8333, "angle": 72.26 },
+					{ "time": 1, "angle": 68.36 },
+					{ "time": 1.1667, "angle": 34.79 },
+					{ "time": 1.3333, "angle": 2.68 }
+				]
+			},
+			"rightthigh": {
+				"rotate": [
+					{ "angle": 62.14 },
+					{ "time": 0.3333, "angle": 23.05 },
+					{ "time": 0.5, "angle": 15.39 },
+					{ "time": 0.6667, "angle": -13.65 },
+					{ "time": 1, "angle": -2.75 },
+					{ "time": 1.1667, "angle": 11.3 },
+					{ "time": 1.3333, "angle": 62.14 }
+				]
+			},
+			"rightleg": {
+				"rotate": [
+					{ "angle": -6.71 },
+					{ "time": 0.1667, "angle": -36.09 },
+					{ "time": 0.3333, "angle": -6.54 },
+					{ "time": 0.5, "angle": 7.07 },
+					{ "time": 0.6667, "angle": 9.62 },
+					{ "time": 0.8333, "angle": -30.74 },
+					{ "time": 1, "angle": -5.62 },
+					{ "time": 1.1667, "angle": -6.27 },
+					{ "time": 1.3333, "angle": -6.71 }
+				]
+			},
+			"cape2": {
+				"rotate": [
+					{ "angle": 16.83 },
+					{ "time": 0.6667, "angle": -3.37 },
+					{ "time": 1.3333, "angle": 16.83 }
+				]
+			},
+			"head": {
+				"rotate": [
+					{ "angle": -3.12, "curve": "stepped" },
+					{ "time": 1.3333, "angle": -3.12 }
+				]
+			}
+		},
+		"drawOrder": [
+			{
+				"time": 0.5,
+				"offsets": [
+					{ "slot": "righthand", "offset": -3 }
+				]
+			},
+			{ "time": 1.1667 }
+		]
+	}
+}
+}
